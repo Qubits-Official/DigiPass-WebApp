@@ -29,7 +29,7 @@ auth.onAuthStateChanged(user => {
 const signout = document.querySelector(".signout");
 
 signout.addEventListener("click", (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     auth.signOut().then(() => {
         //console.log("user signed out");
     });
