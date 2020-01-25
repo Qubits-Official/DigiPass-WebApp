@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DigiPass - Sign up</title>
+
+        <!-- Normalize.css -->
+        <link rel="stylesheet" type="text/css" href="../../vendors/css/normalize.css">
+
+        <!-- Responsive Grid System -->
+        <link rel="stylesheet" type="text/css" href="../../vendors/css/grid.css">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
+
+        <!-- Ionicons -->
+            <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+        <!-- Custom style -->
+        <link rel="stylesheet" type="text/css" href="../../resources/css/style-signup.css">
+    </head>
+
+    <body>
+        <div class="row">
+            <div class="sign-up-card">
+                <form id="signup-form">
+                    <h3>Create DigiPass Account</h3>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="first-name">First Name:</label>
+                            <input type="text" id="first-name" placeholder="Marc Peejay" required>
+                        </div>
+                        <div class="col span-1-of-3">
+                            <label for="middle-name">Middle Name:</label>
+                            <input type="text" id="middle-name" placeholder="Velasco" required>
+                        </div>
+                        <div class="col span-1-of-3">
+                            <label for="last-name">Last Name:</label>
+                            <input type="text" id="last-name" placeholder="Viernes" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="id-number">ID Number:</label>
+                            <input type="text" id="id-number" placeholder="14-01278" required>
+                        </div>
+                        <div class="col span-1-of-3">
+                            <label for="mobile-number">Mobile Number:</label>
+                            <input type="tel" id="mobile-number" placeholder="09369072458" required>
+                        </div>
+                        <div class="col span-1-of-3">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" placeholder="Qubits" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="gender">Gender:</label>
+                            <input type="text" id="gender" placeholder="Male" required>
+                        </div>
+                        <div class="col span-1-of-3">
+                            <label for="grade">Grade:</label>
+                            <input type="text" id="grade" placeholder="12" required>
+                        </div>
+                        <div class="col span-1-of-3">
+                            <label for="section">Section:</label>
+                            <input type="text" id="section" placeholder="Eridani" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" placeholder="science3.141592654@gmail.com" required>
+                        </div>
+                        <div class="col span-1-of-3">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" placeholder="Qwerty1234" required>
+                        </div>
+                    </div>
+                    <div class="line-boundary"></div>
+                    <div class="row">
+                        <div class="col span-1-of-2">
+                            <label for="father-name">Father's Name:</label>
+                            <input type="text" id="father-name" placeholder="Ultra Boy Garden" required>
+                        </div>
+                        <div class="col span-1-of-2">
+                            <label for="father-mobile-number">Mobile Number:</label>
+                            <input type="tel" id="father-mobile-number" placeholder="0936547852" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-2">
+                            <label for="mother-name">Mother's Name:</label>
+                            <input type="text" id="mother-name" placeholder="Greryui G. Atom" required>
+                        </div>
+                        <div class="col span-1-of-2">
+                            <label for="mother-mobile-number">Mobile Number:</label>
+                            <input type="tel" id="mother-mobile-number" placeholder="09653512478" required>
+                        </div>
+                    </div>
+                    <div class="line-boundary"></div>
+                    <div class="row">
+                        <div class="col span-1-of-2">
+                            <label for="primary-address">Primary Address:</label>
+                            <input type="text" id="primary-address" placeholder="123, Mabini Street, Centro 2, Tuguegarao, Cagayan" required>
+                        </div>
+                        <div class="col span-1-of-2">
+                            <label for="secondary-address">Secondary Address:</label>
+                            <input type="text" id="secondary-address" placeholder="339, Ambaguio Street, Masoc, Bayombong, Nueva Vizcaya" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-2">
+                            <label for="other-address-1">Other Address #1:</label>
+                            <input type="text" id="other-address-1" placeholder="None">
+                        </div>
+                        <div class="col span-1-of-2">
+                            <label for="other-address-2">Other Address #2:</label>
+                            <input type="text" id="other-address-2" placeholder="None">
+                        </div>
+                    </div>
+                    <div class="line-boundary"></div>
+                    <h4>By registering your account, you agree to all of the provided <a href="#">Terms and Conditions</a></h4>
+                    <input type="submit" value="Register Account">
+                    <p class="error"></p>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <p>DigiPass <span>v1.0.0-beta</span> | Copyrigth 2019 &copy; All rights reserved | <a href="#">science3.141592654@gmail.com</a></p>
+        </footer>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries
+        -->
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyCaQ_WFEOBk13sFfCf2rTI00gX3Knty3ag",
+                authDomain: "digipass-0.firebaseapp.com",
+                databaseURL: "https://digipass-0.firebaseio.com",
+                projectId: "digipass-0",
+                storageBucket: "digipass-0.appspot.com",
+                messagingSenderId: "1086325406607",
+                appId: "1:1086325406607:web:670b1db6a894688cf5e9fa",
+                measurementId: "G-NMY3RVKFW8"
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+
+            // make auth, firestore, and functions references
+            const auth = firebase.auth();
+            const db = firebase.firestore();
+        </script>
+
+        <!-- Custom authentication script -->
+        <script src="../../resources/js/script-signup-authentication.js"></script>
+    </body>
+</html>

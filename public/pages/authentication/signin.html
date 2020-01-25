@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>DigiPass - Login</title>
+
+        <!-- Normalize.css -->
+        <link rel="stylesheet" type="text/css" href="../../vendors/css/normalize.css">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
+
+        <!-- Custom style -->
+        <link rel="stylesheet" type="text/css" href="../../resources/css/style-signin.css">
+    </head>
+
+    <body>
+        <div class="row">
+            <div class="login-card">
+                <img src="../../resources/img/avatar3.png" alt="DigiPass Logo">
+                <h3>DigiPass Account</h3>
+                <div class="line-boundary"></div>
+                <form id="signin-form">
+                    <table>
+                        <tr>
+                            <th><label for="email">Email:</label></th>
+                        </tr>
+                        <tr>
+                            <td><input type="email" id="email" placeholder="science3.141592654@gmail.com" required></td>
+                        </tr>
+                        <tr>
+                            <th><label for="password">Password:</label></th>
+                        </tr>
+                        <tr>
+                            <td><input type="password" id="password" placeholder="secret69" required></td>
+                        </tr>
+                    </table>
+                    <input type="submit" value="Login">
+                    <p class="error"></p>
+                </form>
+                <div class="line-boundary"></div>
+                <h4>Don't have an account? <a href="signup.html">SIGN UP</a></h4>
+            </div>
+        </div>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries
+        -->
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyCaQ_WFEOBk13sFfCf2rTI00gX3Knty3ag",
+                authDomain: "digipass-0.firebaseapp.com",
+                databaseURL: "https://digipass-0.firebaseio.com",
+                projectId: "digipass-0",
+                storageBucket: "digipass-0.appspot.com",
+                messagingSenderId: "1086325406607",
+                appId: "1:1086325406607:web:670b1db6a894688cf5e9fa",
+                measurementId: "G-NMY3RVKFW8"
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+
+            // make auth, firestore, and functions references
+            const auth = firebase.auth();
+            const db = firebase.firestore();
+        </script>
+
+        <!-- Custom authentication script -->
+        <script src="../../resources/js/script-signin-authentication.js"></script>
+    </body>
+</html>

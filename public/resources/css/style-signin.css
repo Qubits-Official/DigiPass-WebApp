@@ -1,0 +1,137 @@
+/* BASIC SETUP ----------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #555;
+}
+
+html {
+    background-color: #f5f5f5;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+/* BASIC SETUP ----------------------------------------- */
+
+/* REUSABLE COMPONENTS ----------------------------------------- */
+.clearfix {zoom: 1}
+.clearfix::after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.row {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+::placeholder {
+    color: #bdc3c7;
+    font-weight: 300;
+}
+
+.line-boundary {
+    display: block;
+    height: 1px;
+    background-color: #f3f3f3;
+    margin: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a {
+    margin-left: 5px;
+    font-style: normal;
+    letter-spacing: 1px;
+
+    border: none;
+    color: #555;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: #3498db;
+    border-bottom: 1px solid #3498db;
+}
+
+.error {
+    text-align: center;
+    color: #c0392b;
+    font-size: 80%;
+    font-weight: 400;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+/* REUSABLE COMPONENTS ----------------------------------------- */
+
+/* LOGIN CARD ----------------------------------------- */
+.login-card {   
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px #bdc3c7;
+    width: 400px;
+    margin: 50px auto;
+}
+
+img {
+    display: block;
+    width: 100px;
+    height: auto;
+    border-radius: 50px;
+    margin: 0 auto;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+table {
+    margin: 0 auto;
+    width: 100%;
+    margin: 40px 0;
+}
+
+input {
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #e0e0e0;
+    margin: 10px 0;
+    width: 100%;
+}
+
+input[type=submit] {
+    display: block;
+    background-color: #2980b9;
+    color: #fff;
+    margin: 10px auto;
+    padding: 10px 30px;
+    transition: all 0.2s;
+    letter-spacing: 1px;
+}
+
+input[type=submit]:hover {
+    background-color: #3498db;
+    transform: scale(1.01);
+}
+
+th {
+    text-align: left;
+    font-weight: 400;
+}
+
+h4 {
+    font-weight: 300;
+    text-align: center;
+    font-size: 80%;
+}
+/* LOGIN CARD ----------------------------------------- */

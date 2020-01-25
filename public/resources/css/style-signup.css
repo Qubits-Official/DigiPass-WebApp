@@ -1,0 +1,137 @@
+/* BASIC SETUP ----------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #555;
+}
+
+html {
+    background-color: #f5f5f5;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+/* BASIC SETUP ----------------------------------------- */
+
+/* REUSABLE COMPONENTS ----------------------------------------- */
+.clearfix {zoom: 1}
+.clearfix::after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.row {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+::placeholder {
+    color: #bdc3c7;
+    font-weight: 300;
+}
+
+.line-boundary {
+    display: block;
+    height: 1px;
+    background-color: #f3f3f3;
+    margin: 20px;
+}
+
+input {
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #e0e0e0;
+    margin: 5px 0;
+}
+
+input {
+    width: 100%;
+}
+
+input[type=submit] {
+    width: inherit;
+    display: block;
+    background-color: #2980b9;
+    color: #fff;
+    margin: 10px auto;
+    padding: 10px 20px;
+    transition: all 0.2s;
+}
+
+input[type=submit]:hover {
+    background-color: #3498db;
+    transform: scale(1.01);
+}
+
+th:first-child {
+    padding-left: 0;
+}
+
+th {
+    text-align: left;
+    font-weight: 400;
+    padding: 0 5px 0 25px;
+}
+
+h3 {
+    font-weight: 400;
+    text-align: center;
+    margin: 10px 0 20px 0;
+    font-size: 140%;
+
+}
+
+h4 {
+    font-weight: 300;
+    text-align: center;
+    font-size: 80%;
+
+    margin-bottom: 20px;
+}
+
+.error {
+    text-align: center;
+    color: #c0392b;
+    font-size: 80%;
+    font-weight: 400;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+/* REUSABLE COMPONENTS ----------------------------------------- */
+
+/* SIGN UP CARD ----------------------------------------- */
+.sign-up-card {
+    background-color: #fff;
+    padding: 20px 40px 40px 40px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px #bdc3c7;
+    width:  fit-content;
+    margin: 50px auto;
+}
+/* SIGN UP CARD ----------------------------------------- */
+
+/* FOOTER ----------------------------------------- */
+footer {
+    text-align: center;
+    background-color: #2c3e50;
+    padding: 30px 0;
+    margin-top: 20px;
+}
+
+footer p,
+footer span,
+footer a {
+    color: #bdc3c7;
+    font-size: 90%;
+}
+
+footer a {
+    font-size: 20px;
+    text-decoration: none;
+}
+/* FOOTER ----------------------------------------- */
