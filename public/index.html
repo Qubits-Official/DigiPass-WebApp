@@ -1,376 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>DigiPass - Dashboard (Student)</title>
-
-        <!-- Normalize.css -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Normalize -->
         <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
 
-        <!-- Responsive Grid System -->
-        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
-        
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
-        
+
         <!-- Ionicons -->
         <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
-        <!-- Custom style -->
+        <!--
+        <link href="vendors/css/ionicons.min.css" rel="stylesheet">
+        -->
+
+        <!-- Custom Style -->
         <link rel="stylesheet" type="text/css" href="resources/css/style-index.css">
+
+        <!-- Custom Media Queries -->
+        <link rel="stylesheet" type="text/css" href="resources/css/style-index-media-queries.css">
+        
+        <link rel="icon" href="resources/img/icons/DigiPass-icon.ico">
+        <title>Welcome to DigiPass</title>
     </head>
 
     <body>
-        <div class="row">
-            <div class="col span-4-of-12">
-                <div class="sidebar">
-                    <img src="resources/img/avatar3.png" alt="Display Photo">
-                    <h4 class="value" id="Username">Qubits</h4>
-                    <div class="line-boundary"></div>
-                    <table>
-                        <caption>Personal Information</caption>
-                        <tr>
-                            <th>ID Number:</th>
-                            <td class="value" id="ID Number">14-01278</td>
-                        </tr>
-                        <tr>
-                            <th>First Name:</th>
-                            <td class="value" id="First Name">Marc Peejay</td>
-                        </tr>
-                        <tr>
-                            <th>Middle Name:</th>
-                            <td class="value" id="Middle Name">Velasco</td>
-                        </tr>
-                        <tr>
-                            <th>Last Name:</th>
-                            <td class="value" id="Last Name">Viernes</td>
-                        </tr>
-                        <tr>
-                            <th>Grade:</th>
-                            <td class="value" id="Grade">12</td>
-                        </tr>
-                        <tr>
-                            <th>Section:</th>
-                            <td class="value" id="Section">Eridani</td>
-                        </tr>
-                        <tr>
-                            <th>Gender:</th>
-                            <td class="value" id="Gender">Male</td>
-                        </tr>
-                        <tr>
-                            <th>Mobile Number:</th>
-                            <td class="value" id="Mobile Number">09369072458</td>
-                        </tr>
-                    </table>
-                    <div class="line-boundary"></div>
-                    <table>
-                        <caption>Legal Guardians</caption>
-                        <tr>
-                            <th>Father:</th>
-                            <td class="value" id="Father's Name">James Bond</td>
-                        </tr>
-                        <tr>
-                            <th>Mobile Number:</th>
-                            <td class="value" id="Father's Mobile Number">09364555217</td>
-                        </tr>
-                        <tr><td>&nbsp;</td></tr>
-                        <tr>
-                            <th>Mother:</th>
-                            <td class="value" id="Mother's Name">Landres Achier</td>
-                        </tr>
-                        <tr>
-                            <th>Mobile Number:</th>
-                            <td class="value" id="Mother's Mobile Number">09665485412</td>
-                        </tr>
-                        <tr><td>&nbsp;</td></tr>
-                        <tr>
-                            <th>Guardian #1:</th>
-                            <td class="value">Frosie Frost</td>
-                        </tr>
-                        <tr>
-                            <th>Mobile Number:</th>
-                            <td class="value">09636547854</td>
-                        </tr>
-                    </table>
-                    <div class="line-boundary"></div>
-                    <table>
-                        <caption>Addresses</caption>
-                        <tr>
-                            <th>Primary:</th>
-                            <td class="value" id="Primary Address">132, Andres Street, Ilagan, Isabela</td>
-                        </tr>
-                        <tr><td>&nbsp;</td></tr>
-                        <tr>
-                            <th>Secondary:</th>
-                            <td class="value" id="Secondary Address">158, Mabini Street, Iguig, Cagayan</td>
-                        </tr>
-                        <tr><td>&nbsp;</td></tr>
-                        <tr>
-                            <th>Other #1:</th>
-                            <td class="value" id="Other Address #1">Ambaguio Street, Masoc, Byombong, Nueva Vizcaya</td>
-                        </tr>
-                    </table>
+        <header>
+            <nav>
+                <div class="row">
+                    <img src="resources/img/icons/DigiPass-icon.svg" alt="DigiPass Logo" class="logo">
+                    <ul class="main-nav js--main-nav">
+                        <li><a href="#">Our Features</a></li>
+                        <li><a href="#">Download Now</a></li>
+                        <li><a href="#">Recognition</a></li>
+                        <li><a href="#">Donate</a></li>
+                    </ul>
+                    <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
                 </div>
+            </nav>
+            <div class="hero-text-box">
+                <h1>Digital Leave Pass (DigiPass)<br>Ease and Comfort.</h4></h1>
+                <a class="btn btn-full js--scroll-to-plans" href="pages/authentication/signin.html">Sign in</a>
+                <a class="btn btn-ghost js--scroll-to-start" href="#">Show me more</a>
             </div>
+        </header>
 
-            <div class="col span-8-of-12">
-                <div class="contents">
-                    <nav class="main-navigation">
-                        <ul>
-                            <li>
-                                <i class="ion-ios-bulb"><a href="#">About</a></i>
-                            </li>
-                            <li>
-                                <i class="ion-ios-help-circle-outline"><a href="#">Help</a></i>
-                            </li>
-                            <li>
-                                <i class="ion-ios-chatboxes"><a href="#">Suggestions</a></i>
-                            </li>
-                            <li>
-                                <i class="ion-ios-settings"><a href="#">Settings</a></i>
-                            </li>
-                            <li>
-                                <i class="ion-ios-log-out signout"><a href="pages/authentication/signin.html">Signout</a></i>
-                            </li>
-                        </ul>
-                    </nav>
-    
-                    <form id="request-leavepass">
-                        <table>
-                            <caption><h3>Leave Pass Application</h3></caption>
-                            <tr>
-                                <th class="key"><label for="leave-pass-type">Leave Pass Type:</label></th>
-                                <td>
-                                    <input type="radio" id="leave-pass-type" name="leave-pass-type" value="Gate Pass" required> Gate Pass &emsp14;
-                                    <input type="radio" id="leave-pass-type" name="leave-pass-type" value="Home Leave Pass" required> Home Leave Pass &emsp14;
-                                    <input type="radio" id="leave-pass-type" name="leave-pass-type" value="Others" required> Others &emsp14;
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="key"><label for="destination">Destination:</label></th>
-                                <td><input type="text" id="destination" placeholder="123, Andres Street, Santiago, Isabela" required></td>
-                            </tr>
-                            <tr>
-                                <th class="key"><label for="companions">Companions:</label></th>
-                                <td><input type="text" id="companions" placeholder="Marc Friday, Edwin Cruz" required></td>
-                            </tr>
-                                <th><label for="departure">Departure:</label></th>
-                                <td><input type="datetime-local" id="departure" required></td>
-                            </tr>
-                            <tr>
-                                <th><label for="arrival">Arrival:</label></th>
-                                <td><input type="datetime-local" id="arrival" required></td>
-                            </tr>
-                            <tr>
-                                <th><label for="consent">Parent's Consent:</label></th>
-                                <td><input type="file" id="consent" required></td>
-                            </tr>
-                        </table>
-                        <input type="submit" value="Request Gate Pass">
-                    </form>
-    
-                    <div class="info-gatepass">
-                        <div class="options">
-                            <nav>
-                                <ul>
-                                    <li class="security-tags">
-                                        <i class="ion-ios-lock"><a href="#">Security Tags</a></i>
-                                    </li>
-                                    <li class="QR-code">
-                                        <i class="ion-ios-qr-scanner"><a href="#">QR Code</a></i>
-                                    </li>
-                                    <li>
-                                        <i class="ion-ios-expand"><a href="#">Full Screen</a></i>
-                                    </li>
-                                    <li class="download-pdf">
-                                        <i class="ion-ios-download"><a href="#">Download PDF</a></i>
-                                    </li>
-                                    <li>
-                                        <i class="ion-ios-checkmark-circle status">
-                                        <a class="status printable-value" id="Status" href="#">Approved</a></i>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="line-boundary"></div>
-                        <div id="print-content">
-                            <h5>PHILIPPINE SCIENCE HIGH SCHOOL - CVC</h5>
-                            <h5>STUDENT LEAVE PASS</h5>
-                            <ul>
-                                <li><i class="ion-ios-square-outline printable-type"><span>Home Leave</span></i></li>
-                                <li><i class="ion-ios-checkbox-outline printable-type"><span>Gate Pass</span></i></li>
-                                <li><i class="ion-ios-square-outline printable-type"><span>Others</span></i></li>
-                            </ul>
-                            <table>
-                                <col width="1px">
-                                <tr>
-                                    <th class="key">Name:&nbsp;</th>
-                                    <td class="default-value">Marc Peejay Velasco Viernes</td>
-                                </tr>
-                            </table>
-                            <table>
-                                <col width="1px">
-                                <tr>
-                                    <th class="key">Year & Section:&nbsp;</th>
-                                    <td class="default-value">12-Eridani</td>
-                                </tr>
-                            </table>
-                            <table>
-                                <col width="1px">
-                                <tr>
-                                    <th class="key">Place of Destination: Address:&nbsp;</th>
-                                    <td class="printable-value" id="Destination">122, Pascua Street, Centro 1, Claveria, Cagayan</td>
-                                </tr>
-                            </table>
-                            <table>
-                                <col width="1px">
-                                <tr>
-                                    <th class="key"><b>Place of Destination: </b>Contact No.:&nbsp;</th>
-                                    <td class="default-value">09369072458</td>
-                                </tr>
-                            </table>
-                            <table>
-                                <col width="1px">
-                                <tr>
-                                    <th class="key">Date/Time of Departure:&nbsp;</th>
-                                    <td class="printable-value" id="Departure Time">09/12/2001, 10:30 AM.</td>
-                                </tr>
-                            </table>
-                            <table>
-                                <col width="1px">
-                                <tr>
-                                    <th class="key">Date/Time of Arrival/Return:&nbsp;</th>
-                                    <td class="printable-value" id="Arrival Time">09/12/2020, 10:30 AM.</td>
-                                </tr>
-                            </table>
-                            <table>
-                                <col width="1px">
-                                <tr>
-                                    <th class="key">Companion: Name:&nbsp;</th>
-                                    <td class="printable-value" id="Companions">Jairus Alvarez, Lord Peter Suyat</td>
-                                </tr>
-                            </table>
-                            <table>
-                                <col width="1px">
-                                <tr>
-                                    <th class="key"><b>Companion: </b>Relationship:&nbsp;</th>
-                                    <td class="printable-value">Batchmates</td>
-                                </tr>
-                            </table>
-                            <table>
-                                <col width="1px">
-                                <tr>
-                                    <th class="key"><b>Companion: </b>Contact No.:&nbsp;</th>
-                                    <td class="printable-value">0936548796, 09365482214</td>
-                                </tr>
-                            </table>
-                            <div class="credentials">
-                                <h5>Approved by:</h5>
-                                <h4>[ DIGITAL SIGNATURE ]</h4>
-                                <h5><u>Lucky Aron George L. Damaso</u></h5>
-                                <h6>Residence Hall Head</h6>
-                                <h6>PSHS-00-F-RHU-07-Rev0-12/05/16</h6>
-                            </div>
-                        </div>                 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer>
-            <p>DigiPass <span>v1.0.0-beta</span> | Copyrigth 2019 &copy; All rights reserved | <a href="#">science3.141592654@gmail.com</a></p>
-        </footer>
+        <!-- jQuery UI 1.11.2 minified -->
+        <script 
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js" 
+            integrity="sha256-1OxYPHYEAB+HIz0f4AdsvZCfFaX4xrTD9d2BtGLXnTI=" 
+            crossorigin="anonymous">
+        </script>
 
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
+        <!-- jQuery Waypoint 3.1.1 minified -->
+        <script 
+            src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/3.1.1/jquery.waypoints.min.js" 
+            integrity="sha256-+fi9hWOBik/GuQUQcD3WTLKnAYVUCtOjflW7d9ykSm8=" 
+            crossorigin="anonymous">
+        </script>
 
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-            https://firebase.google.com/docs/web/setup#available-libraries
+        <!--
+        <script src="vendors/js/1.11.2-jquery.min.js"></script>
+        <script src="vendors/js/jquery.waypoints.min.js"></script>
         -->
-        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
 
-        <script>
-            // Your web app's Firebase configuration
-            var firebaseConfig = {
-                apiKey: "AIzaSyCaQ_WFEOBk13sFfCf2rTI00gX3Knty3ag",
-                authDomain: "digipass-0.firebaseapp.com",
-                databaseURL: "https://digipass-0.firebaseio.com",
-                projectId: "digipass-0",
-                storageBucket: "digipass-0.appspot.com",
-                messagingSenderId: "1086325406607",
-                appId: "1:1086325406607:web:670b1db6a894688cf5e9fa",
-                measurementId: "G-NMY3RVKFW8"
-            };
-
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
-
-            // make auth, firestore, and functions references
-            const auth = firebase.auth();
-            const db = firebase.firestore();
-            const storage = firebase.storage().ref();
-        </script>
-
-        <!-- Custom universal general script -->
-        <script src="resources/js/script-general.js"></script>
-
-        <!-- Custom authentication script -->
-        <script src="resources/js/script-student-dashboard-authentication.js"></script>
-
-        <!-- Custom general script -->
-        <script src="resources/js/script-student-dashboard-general.js"></script>
-        
-
-        <!-- html2canvas -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-
-        <!-- jsPDF -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
-
-        <script>
-            const downloadPDF = document.querySelector(".download-pdf");
-
-            downloadPDF.addEventListener("click", (event) => {
-                event.preventDefault();
-
-                var w = document.querySelector("#print-content").offsetWidth;
-                var h = document.querySelector("#print-content").offsetHeight;
-                
-                html2canvas(document.querySelector("#print-content"), {
-                    dpi: 300, // Set to 300 DPI
-                    scale: 3, // Adjusts your resolution
-                    
-                    onrendered: function(canvas) {
-                        var img = canvas.toDataURL("image/jpeg", 1);
-                        var doc = new jsPDF('L', 'px', [w, h]);
-
-                        doc.addImage(img, 'JPEG', 0, 0, w, h);
-                        doc.save('sample-file.pdf');
-                    }
-                });
-            });
-
-            /*
-            $(document).ready(function(){
-
-                //pdf 다운로드 	
-                $(".download-pdf").click(function(){
-                    html2canvas(document.getElementById("print-content"), {
-                        onrendered: function(canvas) {
-                            
-                            var imgData = canvas.toDataURL('image/png');
-                            console.log('Report Image URL: '+imgData);
-                            var doc = new jsPDF('p', 'mm', [297, 210]); //210mm wide and 297mm high
-                            
-                            doc.addImage(imgData, 'PNG', 10, 10);
-                            doc.save('sample.pdf');
-                        }
-                    });
-                });
-            })
-            */
-        </script>
-    </body>
+        <!-- Custom Script -->
+        <script src="resources/js/script-index.js"></script>
+    </body>  
 </html>

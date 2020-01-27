@@ -18,13 +18,13 @@ service cloud.firestore {
     // match logged in user doc in Leave Pass collection
     match /Leave%20Pass/{LeavePassID} {
     	allow create: if request.auth.uid != null;
-      allow read, update: if request.auth.uid == LeavePassID;
+      allow read, update: if request.auth.uid == LeavePassID || request.auth.token.admin == true;
     }
     
     // match logged in user doc in users collection
     match /users/{userId} {
     	allow create: if request.auth.uid != null;
-      allow read: if request.auth.uid == userId;
+      allow read: if request.auth.uid == userId || request.auth.token.admin == true;
     }
     
     // match docs in the guides collection

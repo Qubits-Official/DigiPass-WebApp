@@ -25,7 +25,8 @@ signinForm.addEventListener("submit", (e) => {
         signinForm.querySelector(".error").innerHTML = "";
 
         // Simulate a mouse click:
-        window.location.href = "file:///C:/Users/Qubits/VSCodeProjects/DigiPass/index.html";
+        // window.location.href = "file:///C:/Users/Qubits/VSCodeProjects/DigiPass/public/pages/others/dashboard-student.html";
+        window.location.href = "https://digipass-0.firebaseapp.com/pages/others/dashboard-student.html";
     }).catch(err => {
         signinForm.querySelector(".error").innerHTML = err.message;
     });

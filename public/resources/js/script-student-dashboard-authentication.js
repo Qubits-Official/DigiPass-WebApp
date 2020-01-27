@@ -32,6 +32,10 @@ signout.addEventListener("click", (e) => {
     e.preventDefault();
     auth.signOut().then(() => {
         //console.log("user signed out");
+
+        // Simulate a mouse click:
+        window.location.href = "file:///C:/Users/Qubits/VSCodeProjects/DigiPass/public/pages/authentication/signin.html";
+        window.location.href = "https://digipass-0.firebaseapp.com/pages/authentication/signin.html";
     });
 });
 
