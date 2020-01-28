@@ -12,7 +12,7 @@ service cloud.firestore {
     // match logged in user doc in Users collection
     match /Users/{UsersID} {
     	allow create: if request.auth.uid != null;
-      allow read: if request.auth.uid == UsersID;
+      allow read: if request.auth.uid == UsersID || request.auth.token.admin == true;
     }
     
     // match logged in user doc in Leave Pass collection

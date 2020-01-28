@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>DigiPass - Dashboard (Dorm Manager)</title>
+
+        <!-- Normalize.css -->
+        <link rel="stylesheet" type="text/css" href="../../vendors/css/normalize.css">
+
+        <!-- Responsive Grid System -->
+        <link rel="stylesheet" type="text/css" href="../../vendors/css/grid.css">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
+        
+        <!-- Ionicons -->
+        <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+        <!-- Custom style -->
+        <link rel="stylesheet" type="text/css" href="../../resources/css/style-dashboard-dorm-manager.css">
+        
+        <style type="text/css">
+            .contents {
+                margin-left: 13%;
+            }
+            
+            .approve li {
+                list-style: decimal;
+                margin-left: 50px;
+                margin-right: 30px;
+                padding-left: 20px;
+                padding-bottom: 10px;
+                text-align: justify;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="row">
+            <div class="col span-11-of-12">
+                <div class="contents">
+                    <nav class="main-navigation">
+                        <ul>
+                            <li>
+                                <i class="ion-ios-bulb"><a href="#">About</a></i>
+                            </li>
+                            <li>
+                                <i class="ion-ios-help-circle-outline"><a href="#">Help</a></i>
+                            </li>
+                            <li>
+                                <i class="ion-ios-chatboxes"><a href="#">Suggestions</a></i>
+                            </li>
+                            <li>
+                                <i class="ion-ios-settings"><a href="#">Settings</a></i>
+                            </li>
+                            <li>
+                                <i class="ion-ios-log-out"><a href="pages/authentication/log-in.html">Logout</a></i>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="approve">
+                        <h4>Approve Gate Pass</h4>
+                        <ol>
+                            <li>The administrator’s dashboard is designed to promote convenience to your end in approving gate passes. The first container is a panel that summarizes all gate pass requests’ statuses (from pending, active, ongoing, and overdue) and separates special categories that involve violation of some of the school rules (watch list and cases).<br><center><img src="../../resources/img/help-dorm-manager-1.png" width="70%"></center>
+                            
+                            </li>
+                            <li>By clicking any of the links in the panel, you will be redirected to the page that contains all gate pass requests filed under the chosen respective category. To approve or reject gate passes, click <span style="color: #BF8F00">Pending</span> to see the requests awaiting for your decision/action. </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>DigiPass <span>v1.0.0-beta</span> | Copyrigth 2019 &copy; All rights reserved | <a href="#">science3.141592654@gmail.com</a></p>
+        </footer>
+    </body>
+</html>

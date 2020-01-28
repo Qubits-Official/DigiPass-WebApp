@@ -7,10 +7,15 @@ auth.onAuthStateChanged(user => {
     if (user) {
         console.log("user logged in: ", user);
 
-        db.collection("Users").doc(user.uid).onSnapshot((doc) => {
-            setupStudentDashboard(doc.data());
-        }, (error) => {
-            console.log(error.message);
+        db.collection("Users").doc(user.uid).get().then((doc) => {
+            if (doc.exists) {
+                setupStudentDashboard(doc.data());
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+        }).catch((error) => {
+            console.log("Error getting document:", error);
         });
 
         db.collection("Leave Pass").doc(user.uid).onSnapshot((doc) => {
@@ -35,7 +40,7 @@ signout.addEventListener("click", (e) => {
 
         // Simulate a mouse click:
         window.location.href = "file:///C:/Users/Qubits/VSCodeProjects/DigiPass/public/pages/authentication/signin.html";
-        window.location.href = "https://digipass-0.firebaseapp.com/pages/authentication/signin.html";
+        // window.location.href = "https://digipass-0.firebaseapp.com/pages/authentication/signin.html";
     });
 });
 
