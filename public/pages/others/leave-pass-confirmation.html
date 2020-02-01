@@ -14,13 +14,12 @@
         <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
         <!-- Custom style -->
-        <link rel="stylesheet" type="text/css" href="../../resources/css/style-dashboard-student.css">
+        <link rel="stylesheet" type="text/css" href="../../resources/css/style-leave-pass-confirmation.css">
 
         <link rel="icon" href="../../resources/img/icons/DigiPass-icon.ico">
-        <title>DigiPass - Dashboard (Student)</title>
+        <title>DigiPass - Leave Pass Confirmation</title>
     </head>
     <body>
-        <!--i like you baby -->
         <div class="row">
             <div class="col span-4-of-12">
                 <div class="sidebar">
@@ -112,7 +111,6 @@
                     </table>
                 </div>
             </div>
-
             <div class="col span-8-of-12">
                 <div class="contents">
                     <nav class="main-navigation">
@@ -134,41 +132,45 @@
                             </li>
                         </ul>
                     </nav>
-    
                     <form id="request-leavepass">
                         <table>
                             <caption><h3>Leave Pass Application</h3></caption>
                             <tr>
-                                <th class="key"><label for="leave-pass-type">Leave Pass Type:</label></th>
+                                <th class="key"><label>Leave Pass Type:</label></th>
                                 <td>
-                                    <input type="radio" id="leave-pass-type" name="leave-pass-type" value="Gate Pass" required> Gate Pass &emsp14;
-                                    <input type="radio" name="leave-pass-type" value="Home Leave Pass" required> Home Leave Pass &emsp14;
-                                    <input type="radio" name="leave-pass-type" value="Others" required> Others &emsp14;
+                                    <input type="radio" class="leave-pass-type" id="leave-pass-type" name="leave-pass-type" value="Gate Pass" disabled> Gate Pass &emsp14;
+                                    <input type="radio" class="leave-pass-type" name="leave-pass-type" value="Home Leave Pass" disabled=""> Home Leave Pass &emsp14;
+                                    <input type="radio" class="leave-pass-type" name="leave-pass-type" value="Others" disabled> Others &emsp14;
                                 </td>
                             </tr>
                             <tr>
                                 <th class="key"><label for="destination">Destination:</label></th>
-                                <td><input type="text" id="destination" placeholder="123, Andres Street, Santiago, Isabela" required></td>
+                                <td><input type="text" id="destination" placeholder="123, Andres Street, Santiago, Isabela" readonly></td>
                             </tr>
                             <tr>
                                 <th class="key"><label for="companions">Companions:</label></th>
-                                <td><input type="text" id="companions" placeholder="Marc Friday, Edwin Cruz" required></td>
+                                <td><input type="text" id="companions" placeholder="Marc Friday, Edwin Cruz" readonly></td>
                             </tr>
                                 <th><label for="departure">Departure:</label></th>
-                                <td><input type="datetime-local" id="departure" required></td>
+                                <td><input type="datetime-local" id="departure" readonly></td>
                             </tr>
                             <tr>
                                 <th><label for="arrival">Arrival:</label></th>
-                                <td><input type="datetime-local" id="arrival" required></td>
+                                <td><input type="datetime-local" id="arrival" readonly></td>
                             </tr>
                             <tr>
                                 <th><label for="consent">Parent's Consent:</label></th>
-                                <td><input type="file" id="consent" required></td>
+                                <td><input type="text" id="consent" placeholder="gs://digipass-0.appspot.com/images/Hn5QSuIP75bH05MDVrexI71fZZl2" readonly></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th>
+                                    <input type="submit" class="decline" value="Decline">
+                                    <input type="submit" class="approve" value="Approve">
+                                </th>
                             </tr>
                         </table>
-                        <input type="submit" value="Request Gate Pass">
                     </form>
-    
                     <div class="info-gatepass">
                         <div class="options">
                             <nav>
@@ -299,10 +301,10 @@
         <script src="../../resources/js/script-general.js"></script>
 
         <!-- Custom authentication script -->
-        <script src="../../resources/js/script-student-dashboard-authentication.js"></script>
+        <script src="../../resources/js/script-leave-pass-confirmation-authentication.js"></script>
 
         <!-- Custom general script -->
-        <script src="../../resources/js/script-student-dashboard-general.js"></script>
+        <script src="../../resources/js/script-leave-pass-confirmation-general.js"></script>
         
         <!-- html2canvas -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>

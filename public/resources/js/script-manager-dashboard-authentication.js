@@ -1,14 +1,34 @@
-// listen for auth status changes
-auth.onAuthStateChanged((user) => {
-    if (user) {
-        console.log("user logged in: ", user);
+// get server time stamp
+var getServerTimeStamp = new Promise((resolve, reject) => {
+    var http = new XMLHttpRequest();
 
-        db.collection("Leave Pass").where("Status", "==", "Pending").onSnapshot((querySnapshot) => {
-            setupLeavePassRequest(querySnapshot);
-        });
-    } else {
-        console.log("user logged out", user);
+    http.onreadystatechange = () => {
+        if (http.readyState == 4 && http.status == 200) {
+            let time = JSON.parse(http.response);
+
+            resolve(time["timestamp"]);
+        }
     };
+
+    http.open("GET", "http://api.timezonedb.com/v2.1/get-time-zone?key=KFGFQ41VONQB&format=json&by=zone&zone=Asia/Manila", true);
+    http.send();
+});
+
+getServerTimeStamp.then((resolve) => {
+    // listen for auth status changes
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            console.log("user logged in: ", user);
+
+            db.collection("Leave Pass").where("Status", "==", "Pending").orderBy("Time Stamp").limit(10).onSnapshot((querySnapshot) => {
+                setupLeavePassRequest(querySnapshot, resolve);
+            });
+        } else {
+            console.log("user logged out", user);
+        };
+    });
+});getServerTimeStamp.catch((reject) => {
+    console.log(reject);
 });
 
 // signout

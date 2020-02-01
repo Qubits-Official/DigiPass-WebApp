@@ -1,30 +1,46 @@
 const requestLeavePassForm = document.querySelector("#request-leavepass");
+var loader = document.querySelector(".loader");
+var fullName = "";
 
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
-    //console.log(user);
-    
     if (user) {
         console.log("user logged in: ", user);
 
         db.collection("Users").doc(user.uid).get().then((doc) => {
             if (doc.exists) {
-                setupStudentDashboard(doc.data());
+                setupStudentProfile(doc.data());
+                setupDefaultPrintablePass(doc.data());
+
+                // fetch the printable leave pass data
+                db.collection("Leave Pass").doc(user.uid).onSnapshot((doc) => {
+                    if (doc.exists) {
+                        loader.className = "loader loader-default is-active";
+
+                        fullDynamicSetupPrintablePass(doc.data());
+                    } else {
+                        console.log("No current leave pass data.");
+                    }
+
+                    loader.className = "loader loader-default";
+                }, (error) => {
+                    console.log(error.message);
+
+                    loader.className = "loader loader-default";
+                });
+
+                completeLeavePassRequest(user);
             } else {
                 // doc.data() will be undefined in this case
                 console.log("No such document!");
+
+                loader.className = "loader loader-default";
             }
         }).catch((error) => {
             console.log("Error getting document:", error);
-        });
 
-        db.collection("Leave Pass").doc(user.uid).onSnapshot((doc) => {
-            fullDynamicSetupPrintablePass(doc.data());
-        }, (error) => {
-            console.log(error.message);
+            loader.className = "loader loader-default";
         });
-        
-        completeLeavePassRequest(user);
     } else {
         console.log("user logged out", user);
     };
@@ -33,8 +49,12 @@ auth.onAuthStateChanged(user => {
 // signout
 const signout = document.querySelector(".signout");
 
-signout.addEventListener("click", (e) => {
-    e.preventDefault();
+signout.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    loader.setAttribute("data-text", "Signing out");
+    loader.className = "loader loader-default is-active";
+
     auth.signOut().then(() => {
         //console.log("user signed out");
 
@@ -51,6 +71,7 @@ const uploadLeavePassData = (downloadURL, user) => {
         "Status": "Pending",
         "Time Stamp": firebase.firestore.FieldValue.serverTimestamp(),
 
+        "Full Name": fullName,
         "Leave Pass Type": requestLeavePassForm["leave-pass-type"].value,
         "Destination": requestLeavePassForm["destination"].value,
         "Companions": requestLeavePassForm["companions"].value,
@@ -58,17 +79,25 @@ const uploadLeavePassData = (downloadURL, user) => {
         "Arrival Time": requestLeavePassForm["arrival"].value,
         "Parent's Consent": downloadURL
     }).then(() => {
-        requestLeavePassForm.reset();
         alert("Leave Pass Request was successfully submitted.")
+
+        requestLeavePassForm.reset();
+
+        loader.className = "loader loader-default";
     }).catch(error => {
         console.log(error);
+
+        loader.className = "loader loader-default";
     });
 };
 
 // upload parent's consent image and data
 const completeLeavePassRequest = (user) => {
-    requestLeavePassForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+    requestLeavePassForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        loader.setAttribute("data-text", "Sending Application Data");
+        loader.className = "loader loader-default is-active";
 
         // upload parent's consent image
         // File or Blob
@@ -92,6 +121,8 @@ const completeLeavePassRequest = (user) => {
             switch (snapshot.state) {
                 case firebase.storage.TaskState.PAUSED: // or 'paused'
                     console.log('Upload is paused');
+
+                    loader.className = "loader loader-default";
                     break;
                 case firebase.storage.TaskState.RUNNING: // or 'running'
                     console.log('Upload is running');
@@ -103,12 +134,15 @@ const completeLeavePassRequest = (user) => {
             switch (error.code) {
                 case 'storage/unauthorized':
                     // User doesn't have permission to access the object
+                    console.log(error.message);
                     break;
                 case 'storage/canceled':
                     // User canceled the upload
+                    console.log(error.message);
                     break;
                 case 'storage/unknown':
                     // Unknown error occurred, inspect error.serverResponse
+                    console.log(error.message);
                     break;
             }
         }, () => {

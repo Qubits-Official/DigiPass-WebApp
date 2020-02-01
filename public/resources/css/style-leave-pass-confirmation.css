@@ -1,0 +1,259 @@
+/* BASIC SETUP ----------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #555;
+}
+
+html {
+    background-color: #f5f5f5;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+/* BASIC SETUP ----------------------------------------- */
+
+/* REUSABLE COMPONENTS ----------------------------------------- */
+.clearfix {zoom: 1}
+.clearfix::after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.row {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+::placeholder {
+    color: #bdc3c7;
+    font-weight: 300;
+}
+
+.sidebar,
+#request-leavepass,
+.info-gatepass,
+.contents .main-navigation {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px #bdc3c7;
+    margin-bottom: 20px;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+    text-align: left;
+    margin: 10px 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.line-boundary {
+    display: block;
+    height: 1px;
+    background-color: #f3f3f3;
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+input {
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #e0e0e0;
+    margin: 5px 0;
+}
+
+input[type=text] {
+    width: 100%;
+}
+
+input[type=submit] {
+    display: block;
+    background-color: #2980b9;
+    color: #fff;
+    margin: 10px auto;
+    padding: 10px 20px;
+    transition: all 0.2s;
+}
+
+input[type=submit]:hover {
+    background-color: #3498db;
+    transform: scale(1.01);
+}
+
+
+th {
+    text-align: left;
+    font-weight: 400;
+}
+/* REUSABLE COMPONENTS ----------------------------------------- */
+
+/* SIDEBAR ----------------------------------------- */
+.sidebar img {
+    display: block;
+    width: 100px;
+    height: auto;
+    border-radius: 50px;
+    margin: 0 auto;
+}
+
+.sidebar h4 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+caption {
+    text-align: left;
+    font-weight: 400;
+    font-size: 120%;
+    letter-spacing: 1px;
+    margin: 0 0 10px 0;
+}
+
+.sidebar tr {
+    line-height: 1.3;
+}
+/* SIDEBAR ----------------------------------------- */
+
+/* CONTENTS ----------------------------------------- */
+/* navigation ----------------------------------------- */
+nav li:first-child,
+.info-gatepass li:first-child {
+    margin-left: 0;
+}
+
+nav li,
+.info-gatepass li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav a,
+.info-gatepass span {
+    margin-left: 5px;
+    font-style: normal;
+    letter-spacing: 1px;
+}
+
+nav i:hover,
+nav a:hover {
+    color: #3498db;
+    transition: all 0.2s;
+}
+/* navigation ----------------------------------------- */
+
+/* request gatepass ----------------------------------------- */
+input[type=radio] {
+    margin-bottom: 10px;
+}
+
+input[type=submit] {
+    display: inline-block;
+    margin: 10px 10px 0 10px;
+    width: 160px;
+}
+
+input[type=submit]:first-child {
+    margin-left: 0;
+}
+/* request gatepass ----------------------------------------- */
+
+/* information gatepass ----------------------------------------- */
+.info-gatepass h4,
+.info-gatepass h5,
+.info-gatepass h6,
+.info-gatepass ul {
+    text-align: center;
+    margin: 0;
+}
+
+.info-gatepass h6:last-child {
+    letter-spacing: 1px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.info-gatepass ul {
+    margin: 10px 0;
+}
+
+.info-gatepass .key {
+    text-align: left;
+    white-space: nowrap;
+}
+
+#print-content .printable-value,
+#print-content .default-value {
+    text-align: left;
+    border-bottom: 1px solid #555;
+}
+
+.info-gatepass b {
+    visibility: hidden;
+}
+
+.info-gatepass h5 {
+    margin: 0;
+    line-height: 1.3;
+}
+
+.info-gatepass .credentials {
+    margin-top: 15px;
+}
+
+.info-gatepass h4 {
+    margin: 5px 0;
+}
+
+.info-gatepass {
+    font-size: 90%;
+}
+
+.info-gatepass .status {
+    font-weight: 400;
+}
+
+.info-gatepass #print-content {
+    padding: 10px;
+    border: 1px solid #555;
+}
+/* information gatepass ----------------------------------------- */
+/* CONTENTS ----------------------------------------- */
+
+/* FOOTER ----------------------------------------- */
+footer {
+    text-align: center;
+    background-color: #2c3e50;
+    padding: 30px 0;
+    margin-top: 20px;
+}
+
+footer p,
+footer span,
+footer a {
+    color: #bdc3c7;
+    font-size: 90%;
+}
+
+footer a {
+    font-size: 20px;
+}
+/* FOOTER ----------------------------------------- */
