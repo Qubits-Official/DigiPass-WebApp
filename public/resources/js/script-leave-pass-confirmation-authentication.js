@@ -1,47 +1,62 @@
+var loader = document.querySelector(".loader");
+
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
-    //console.log(user);
-    
     if (user) {
-        console.log("user logged in: ", user);
+        user.getIdTokenResult().then(idTokenResult => {
+            user.admin = idTokenResult.claims.admin;
 
-        db.collection("Users").doc(getUrlParam("uid", "#")).get().then((doc) => {
-            if (doc.exists) {
-                setupStudentDashboard(doc.data());
+            if (user.admin) {
+                console.log("admin user logged in: ", user);
+
+                db.collection("Users").doc(getUrlParam("uid", "#")).get().then((doc) => {
+                    setupStudentProfile(doc.data());
+                    setupDefaultPrintablePass(doc.data());
+
+                    // fetch the printable leave pass data
+                    db.collection("Leave Pass").doc(getUrlParam("uid", "#")).onSnapshot((doc) => {
+                        if (doc.exists) {
+                            loader.className = "loader loader-default is-active";
+    
+                            setupLeavePassApplication(doc.data());
+                            fullDynamicSetupPrintablePass(doc.data());
+                        } else {
+                            console.log("No current leave pass data.");
+                        }
+    
+                        loader.className = "loader loader-default";
+                    }, (error) => {
+                        console.log(error.message);
+    
+                        loader.className = "loader loader-default";
+                    });
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
+
+                    loader.className = "loader loader-default";
+                });
             } else {
-                // doc.data() will be undefined in this case
-                console.log("No such document!");
-            }
-        }).catch((error) => {
-            console.log("Error getting document:", error);
-        });
+                loader.setAttribute("data-text", "Redirecting Account");
+                loader.className = "loader loader-default is-active";
 
-        db.collection("Leave Pass").doc(getUrlParam("uid", "#")).onSnapshot((doc) => {
-            setupLeavePassApplication(doc.data());
-            fullDynamicSetupPrintablePass(doc.data());
-        }, (error) => {
-            console.log(error.message);
+                console.log("user logged in: ", user);
+
+                // Simulate a mouse click:
+                // window.location.href = "file:///C:/Users/Qubits/VSCodeProjects/DigiPass/public/pages/others/dashboard-student.html";
+                window.location.href = "https://digipass-0.web.app/pages/others/dashboard-student.html";
+            }
         });
     } else {
+        loader.setAttribute("data-text", "Redirecting to the Sign in Page");
+        loader.className = "loader loader-default is-active";
+
         console.log("user logged out", user);
-    };
-});
-
-// signout
-const signout = document.querySelector(".signout");
-
-signout.addEventListener("click", (e) => {
-    e.preventDefault();
-    auth.signOut().then(() => {
-        //console.log("user signed out");
 
         // Simulate a mouse click:
-        window.location.href = "file:///C:/Users/Qubits/VSCodeProjects/DigiPass/public/pages/authentication/signin.html";
-        // window.location.href = "https://digipass-0.firebaseapp.com/pages/authentication/signin.html";
-    });
+        // window.location.href = "file:///C:/Users/Qubits/VSCodeProjects/DigiPass/public/pages/authentication/signin.html";
+        window.location.href = "https://digipass-0.web.app/pages/authentication/signin.html";
+    };
 });
-
-// alert(getUrlParam("uid", "#"));
 
 function getUrlVars() {
     var vars = {};
@@ -58,5 +73,3 @@ function getUrlParam(parameter, defaultvalue){
         }
     return urlparameter;
 }
-
-

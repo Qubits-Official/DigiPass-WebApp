@@ -26,7 +26,7 @@ const setupLeavePassRequest = (data, serverTimeStamp) => {
                 <td>${getRequestTime(leavePassRequest.data(), serverTimeStamp)} mins ago</td>
                 <td>
                     <a class="view-request"
-                    href="file:///C:/Users/Qubits/VSCodeProjects/DigiPass/public/pages/others/leave-pass-confirmation.html?uid=${leavePassRequest.id}">
+                    href="../others/leave-pass-confirmation.html?uid=${leavePassRequest.id}">
                         View Request
                     </a>
                 </td>

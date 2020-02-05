@@ -1,12 +1,10 @@
 // setup student's dashboard profile data
-const setupStudentDashboard = (data) => {
+const setupStudentProfile = (data) => {
     let valueContainer = document.querySelectorAll(".value");
 
     valueContainer.forEach((valueContainer) => {
         valueContainer.textContent = data[valueContainer.id];
     });
-
-    setupDefaultPrintablePass(data);
 };
 
 const setupLeavePassApplication = (data) => {
@@ -47,15 +45,18 @@ const fullDynamicSetupPrintablePass = (data) => {
 
     switch (data["Status"]) {
         case "Pending":
+            status[0].className = "ion-ios-remove-circle status"
             status[0].style.color = "#f39c12";
             status[1].style.color = "#f39c12";
             break;
         case "Approved":
+            status[0].className = "ion-ios-checkmark-circle status"
             status[0].style.color = "#27ae60";
             status[1].style.color = "#27ae60";
             break;
         case "Declined":
         case "Expired":
+            status[0].className = "ion-ios-close-circle status"
             status[0].style.color = "#e74c3c";
             status[1].style.color = "#e74c3c";
             break;
@@ -131,13 +132,19 @@ const approve = document.querySelector(".approve");
 approve.addEventListener("click", (event) => {
     event.preventDefault();
 
+    loader.setAttribute("data-text", "Updating Server Data");
+    loader.className = "loader loader-default is-active";
+
     db.collection("Leave Pass").doc(getUrlParam("uid", "#")).update({
         "Status": "Approved"
     }).then(() => {
         // Simulate a mouse click:
-        window.location.href = "file:///C:/Users/Qubits/VSCodeProjects/DigiPass/public/pages/administrator/dashboard-manager.html"
+        // window.location.href = "file:///C:/Users/Qubits/VSCodeProjects/DigiPass/public/pages/administrator/dashboard-manager.html";
+        window.location.href = "https://digipass-0.web.app/pages/administrator/dashboard-manager.html";
     }).catch((error) => {
         console.log(error.message);
+
+        loader.className = "loader loader-default";
     });
 });
 
@@ -147,12 +154,61 @@ const decline = document.querySelector(".decline");
 decline.addEventListener("click", (event) => {
     event.preventDefault();
 
+    loader.setAttribute("data-text", "Updating Server Data");
+    loader.className = "loader loader-default is-active";
+
     db.collection("Leave Pass").doc(getUrlParam("uid", "#")).update({
         "Status": "Declined"
     }).then(() => {
         // Simulate a mouse click:
-        window.location.href = "file:///C:/Users/Qubits/VSCodeProjects/DigiPass/public/pages/administrator/dashboard-manager.html"
+        // window.location.href = "file:///C:/Users/Qubits/VSCodeProjects/DigiPass/public/pages/administrator/dashboard-manager.html";
+        window.location.href = "https://digipass-0.web.app/pages/administrator/dashboard-manager.html";
     }).catch((error) => {
         console.log(error.message);
+
+        loader.className = "loader loader-default";
     });
 });
+
+// print pdf
+const downloadPDF = document.querySelector(".download-pdf");
+
+downloadPDF.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    var w = document.querySelector("#print-content").offsetWidth;
+    var h = document.querySelector("#print-content").offsetHeight;
+    
+    html2canvas(document.querySelector("#print-content"), {
+        dpi: 300, // Set to 300 DPI
+        scale: 3, // Adjusts your resolution
+        
+        onrendered: function(canvas) {
+            var img = canvas.toDataURL("image/jpeg", 1);
+            var doc = new jsPDF('L', 'px', [w, h]);
+
+            doc.addImage(img, 'JPEG', 0, 0, w, h);
+            doc.save('sample-file.pdf');
+        }
+    });
+});
+
+/*
+$(document).ready(function(){
+
+    //pdf 다운로드 	
+    $(".download-pdf").click(function(){
+        html2canvas(document.getElementById("print-content"), {
+            onrendered: function(canvas) {
+                
+                var imgData = canvas.toDataURL('image/png');
+                console.log('Report Image URL: '+imgData);
+                var doc = new jsPDF('p', 'mm', [297, 210]); //210mm wide and 297mm high
+                
+                doc.addImage(imgData, 'PNG', 10, 10);
+                doc.save('sample.pdf');
+            }
+        });
+    });
+})
+*/

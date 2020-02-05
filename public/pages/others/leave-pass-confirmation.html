@@ -16,10 +16,15 @@
         <!-- Custom style -->
         <link rel="stylesheet" type="text/css" href="../../resources/css/style-leave-pass-confirmation.css">
 
+        <!-- Loader -->
+        <link rel="stylesheet" type="text/css" href="../../vendors/css/loader-default.css">
+
         <link rel="icon" href="../../resources/img/icons/DigiPass-icon.ico">
         <title>DigiPass - Leave Pass Confirmation</title>
     </head>
+    
     <body>
+        <div class="loader loader-default is-active" data-text="Fetchhing Server Data" data-blink></div>
         <div class="row">
             <div class="col span-4-of-12">
                 <div class="sidebar">
@@ -116,6 +121,9 @@
                     <nav class="main-navigation">
                         <ul>
                             <li>
+                                <i class="ion-ios-log-out signout"><a href="../administrator/dashboard-manager.html">Go Back</a></i>
+                            </li>
+                            <li>
                                 <i class="ion-ios-bulb"><a href="#">About</a></i>
                             </li>
                             <li>
@@ -126,9 +134,6 @@
                             </li>
                             <li>
                                 <i class="ion-ios-settings"><a href="../administrator/secret-functions.html" target="_blank">Settings</a></i>
-                            </li>
-                            <li>
-                                <i class="ion-ios-log-out signout"><a href="#">Signout</a></i>
                             </li>
                         </ul>
                     </nav>
@@ -296,9 +301,6 @@
         <!-- Firebase configuration -->
         <script src="../../resources/js/script-firebase-configuration.js"></script>
         <script>const storage = firebase.storage().ref();</script>
-
-        <!-- Custom universal general script -->
-        <script src="../../resources/js/script-general.js"></script>
 
         <!-- Custom authentication script -->
         <script src="../../resources/js/script-leave-pass-confirmation-authentication.js"></script>

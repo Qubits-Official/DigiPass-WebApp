@@ -4,6 +4,18 @@
     </head>
 
     <body>
-        <h1>Hello</h1>
+        <h1 id="titi">Hello</h1>
+
+        <button id="pepe" onclick="change()">Click Me</button>
+
+        <script>
+            var a = document.querySelector("#pepe");
+
+            a.addEventListener("click", (event) => {
+                let b = document.querySelector("#titi");
+
+                b.textContent = "Blaise";
+            });
+        </script>
     </body>
 </html>
